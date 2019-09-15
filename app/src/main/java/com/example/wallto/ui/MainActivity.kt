@@ -1,11 +1,17 @@
+/*
+ * Created by Mark Abramenko on 15.09.19 15:25
+ * Copyright (c) 2019 . All rights reserved.
+ * Last modified 15.09.19 15:12
+ */
+
 package com.example.wallto.ui
 
 import android.content.SharedPreferences
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
 import com.example.wallto.R
 import com.example.wallto.ui.main.MainFragment
 import com.example.wallto.ui.main.prices.PricesFragment
@@ -15,7 +21,7 @@ import com.example.wallto.ui.main.WalletsFragment
 class MainActivity : AppCompatActivity() {
     private lateinit var btv: BottomNavigationView
     private lateinit var prefs: SharedPreferences
-    lateinit var toolbar: android.support.v7.widget.Toolbar
+    lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

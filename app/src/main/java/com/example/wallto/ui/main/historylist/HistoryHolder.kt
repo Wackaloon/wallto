@@ -1,7 +1,7 @@
 package com.example.wallto.ui.main.historylist
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
 import com.example.wallto.R

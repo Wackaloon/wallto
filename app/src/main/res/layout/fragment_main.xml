@@ -6,11 +6,11 @@
         android:id="@+id/scrollWallet">
 
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
                                                      android:layout_height="wrap_content"
                                                      android:background="@drawable/shape_blue_gradient"
                                                      android:outlineAmbientShadowColor="#bdc6fc"
@@ -59,9 +59,9 @@
                     android:id="@+id/imageButton2" android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp"/>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="2dp"
@@ -113,9 +113,9 @@
                     android:id="@+id/imageButton" android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp"/>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_white"
@@ -126,7 +126,7 @@
                 android:layout_marginEnd="8dp" android:id="@+id/constraintHistory"
                 android:layout_marginTop="24dp">
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/constraintLayout9"
@@ -174,8 +174,8 @@
                         app:layout_constraintTop_toTopOf="parent" android:fontFamily="@font/product_medium"
                         android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
-            </android.support.constraint.ConstraintLayout>
-            <android.support.constraint.ConstraintLayout
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/constraintLayout8"
@@ -221,7 +221,7 @@
                         app:layout_constraintTop_toTopOf="parent" android:fontFamily="@font/product_medium"
                         android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <TextView
                     android:text="Цены"
                     android:textColor="@color/colorPrimaryText"
@@ -231,7 +231,7 @@
                     android:layout_marginStart="24dp" app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginTop="24dp" android:textSize="20sp"
                     android:fontFamily="@font/product_medium"/>
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
@@ -277,7 +277,7 @@
                         app:layout_constraintTop_toTopOf="parent" android:fontFamily="@font/product_medium"
                         android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <View
                     android:id="@+id/divider2"
                     android:layout_width="0dp"
@@ -298,7 +298,7 @@
                     android:layout_marginEnd="24dp"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" android:layout_marginTop="8dp"/>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <com.github.florent37.shapeofview.shapes.ArcView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -310,7 +310,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/arcView">
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/shape_purple_gradient">
@@ -346,9 +346,9 @@
                         android:layout_marginStart="8dp"
                         app:layout_constraintTop_toBottomOf="@+id/tvTitle2" android:layout_marginTop="8dp"
                 />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.github.florent37.shapeofview.shapes.ArcView>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

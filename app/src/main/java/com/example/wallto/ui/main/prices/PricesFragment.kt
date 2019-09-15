@@ -8,15 +8,16 @@ package com.example.wallto.ui.main.prices
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wallto.R
 import com.example.wallto.data.Currency
 import com.example.wallto.network.PriceApi
@@ -31,7 +32,7 @@ class PricesFragment : Fragment(), PricesView {
     private lateinit var swipe: SwipeRefreshLayout
     private lateinit var progress: ProgressBar
     private lateinit var infoService: InfoService
-    private lateinit var recyclerView: android.support.v7.widget.RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private var TAG = this.javaClass.simpleName
     private val presenter = PricesPresenter(this)
 

@@ -3,13 +3,14 @@ package com.example.wallto.ui.main
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.v4.app.Fragment
-import android.support.v4.widget.SwipeRefreshLayout
+import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wallto.R
 import com.example.wallto.network.PriceApi
 import com.example.wallto.network.services.InfoService
@@ -20,7 +21,7 @@ class MainFragment : Fragment() {
     private lateinit var swipe: SwipeRefreshLayout
     private lateinit var progress: ProgressBar
     private lateinit var infoService: InfoService
-    private lateinit var recyclerView: android.support.v7.widget.RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private lateinit var prefs: SharedPreferences
 
     private lateinit var login: TextView

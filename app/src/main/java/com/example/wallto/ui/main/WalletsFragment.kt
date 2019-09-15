@@ -5,14 +5,15 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.v4.app.Fragment
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wallto.R
 import com.example.wallto.data.User
 import com.example.wallto.data.Wallet
@@ -33,7 +34,7 @@ class WalletsFragment : Fragment() {
     private lateinit var progress: ProgressBar
     private lateinit var walletService: WalletService
     private lateinit var tokenService: TokenService
-    private lateinit var recyclerView: android.support.v7.widget.RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private lateinit var prefs: SharedPreferences
 
     private var TAG = this.javaClass.simpleName

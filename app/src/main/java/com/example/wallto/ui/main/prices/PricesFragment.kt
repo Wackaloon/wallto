@@ -1,10 +1,17 @@
-package com.example.wallto.ui.main
+/*
+ * Created by Mark Abramenko on 12.09.19 12:18
+ * Copyright (c) 2019 . All rights reserved.
+ * Last modified 05.09.19 14:05
+ */
+
+package com.example.wallto.ui.main.prices
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,17 +27,18 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
-class PricesFragment : Fragment() {
+class PricesFragment : Fragment(), PricesView {
     private lateinit var swipe: SwipeRefreshLayout
     private lateinit var progress: ProgressBar
     private lateinit var infoService: InfoService
     private lateinit var recyclerView: android.support.v7.widget.RecyclerView
+    private var TAG = this.javaClass.simpleName
+    private val presenter = PricesPresenter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_prices, container, false)
 
-        val retrofit = PriceApi.getInstance()
-        infoService = retrofit.create(InfoService::class.java)
+        presenter.initNetwork()
 
         recyclerView = v.findViewById(R.id.recyclerPrices)
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -40,10 +48,10 @@ class PricesFragment : Fragment() {
 
         swipe = v.findViewById(R.id.swipePrices)
         swipe.setOnRefreshListener {
-            addItems()
+            presenter.onRefreshAction()
         }
 
-        addItems()
+        presenter.getData()
 
         return v
     }
@@ -55,33 +63,26 @@ class PricesFragment : Fragment() {
         act.supportActionBar!!.title = "Курсы"
     }
 
-    @SuppressLint("CheckResult")
-    private fun addItems() {
-        infoService.prices
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object : DisposableSingleObserver<ArrayList<Currency>>() {
-                override fun onSuccess(t: ArrayList<Currency>) {
-                    if (context != null) {  // Сделано для того, чтобы пресечь попытку записать данные в уничтоженный фрагмент
-                        val prices = ArrayList<Currency>()
-                        for (i in 0..2) {
-                            prices.add(t[i])
-                        }
-                        displayData(prices)
-                        swipe.isRefreshing = false
-                        progress.visibility = ProgressBar.INVISIBLE
-                    }
-                }
-
-                override fun onError(e: Throwable) {
-                    Toast.makeText(context, "Ошибка при загрузке: " + e.message, Toast.LENGTH_SHORT).show()
-                }
-
-            })
-    }
-
-    private fun displayData(prices: ArrayList<Currency>) {
+    override fun displayData(prices: ArrayList<Currency>) {
         val adapter = PriceAdapter(prices, context!!)
         recyclerView.adapter = adapter
     }
+
+    override fun writeLog(mes: String?) {
+        Log.e(TAG, mes)
+    }
+
+    override fun writeLog(mes: String?, e: Throwable?) {
+        Log.e(TAG, mes, e)
+    }
+
+    override fun hideSwipe() {
+        swipe.isRefreshing = false
+    }
+
+    override fun hideProgressBar() {
+        progress.visibility = ProgressBar.INVISIBLE
+    }
+
+    override val isFragmentExist: Boolean get() = context != null
 }

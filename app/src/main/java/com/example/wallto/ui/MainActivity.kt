@@ -8,7 +8,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import com.example.wallto.R
 import com.example.wallto.ui.main.MainFragment
-import com.example.wallto.ui.main.PricesFragment
+import com.example.wallto.ui.main.prices.PricesFragment
 import com.example.wallto.ui.main.SettingsFragment
 import com.example.wallto.ui.main.WalletsFragment
 

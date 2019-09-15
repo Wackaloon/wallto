@@ -41,4 +41,5 @@
     <string name="pin_correct">PIN-код введен верно, можете ввести новый</string>
     <string name="pin_enteredold">Вы ввели старый PIN</string>
     <string name="pin_changed_success">Вы успешно изменили PIN-код</string>
+    <string name="home_hello">Доброго времени суток, </string>
 </resources>

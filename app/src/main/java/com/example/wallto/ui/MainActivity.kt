@@ -13,7 +13,7 @@ import android.preference.PreferenceManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import com.example.wallto.R
-import com.example.wallto.ui.main.MainFragment
+import com.example.wallto.ui.main.home.HomeFragment
 import com.example.wallto.ui.main.prices.PricesFragment
 import com.example.wallto.ui.main.SettingsFragment
 import com.example.wallto.ui.main.WalletsFragment
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.mainContainer, MainFragment())
+            .replace(R.id.mainContainer, HomeFragment())
             .commit()
     }
 
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var selectedFragment: Fragment
         when (it.itemId) {
             R.id.nav_home -> {
-                selectedFragment = MainFragment()
+                selectedFragment = HomeFragment()
             }
             R.id.nav_wallets -> {
                 selectedFragment = WalletsFragment()

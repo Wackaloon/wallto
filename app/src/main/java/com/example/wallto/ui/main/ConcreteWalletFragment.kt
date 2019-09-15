@@ -73,7 +73,7 @@ class ConcreteWalletFragment : Fragment() {
         val typeString = arguments!!.getString("type")
 
         // Отображение названия кошелька
-        title = v.findViewById(R.id.tvLoginMain)
+        title = v.findViewById(R.id.tvGetStarted)
         title.text = titleString
 
         balance = v.findViewById(R.id.tvBalance)

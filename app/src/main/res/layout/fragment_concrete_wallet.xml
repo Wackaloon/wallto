@@ -137,7 +137,7 @@
                             android:textColor="#fff"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tvLoginMain" app:layout_constraintStart_toStartOf="parent"
+                            android:id="@+id/tvGetStarted" app:layout_constraintStart_toStartOf="parent"
                             android:layout_marginStart="70dp" app:layout_constraintEnd_toEndOf="parent"
                             android:layout_marginEnd="70dp" android:layout_marginTop="55dp"
                             app:layout_constraintTop_toTopOf="parent" android:textSize="18sp"
@@ -164,7 +164,7 @@
                             android:layout_marginEnd="8dp"
                             android:textSize="36sp"
                             app:layout_constraintHorizontal_bias="0.501" android:layout_marginTop="30dp"
-                            app:layout_constraintTop_toBottomOf="@+id/tvLoginMain"/>
+                            app:layout_constraintTop_toBottomOf="@+id/tvGetStarted"/>
                     <ImageButton
                             android:src="@drawable/ic_send"
                             android:tint="#fff"

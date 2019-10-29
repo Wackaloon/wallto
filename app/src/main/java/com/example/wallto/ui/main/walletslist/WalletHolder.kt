@@ -14,9 +14,9 @@ class WalletHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var symbol: TextView = itemView.findViewById(R.id.tvSymbol)
     private var price: TextView = itemView.findViewById(R.id.tvBalance)
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "DefaultLocale")
     fun bind(wallet: Wallet) {
-//        val decimalFormat = DecimalFormat("##0.00")
+        if (wallet.balance == null) wallet.balance = "0"
 
         name.text = wallet.title
         symbol.text = wallet.type!!.toUpperCase()

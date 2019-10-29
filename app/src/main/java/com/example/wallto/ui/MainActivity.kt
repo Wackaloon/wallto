@@ -10,6 +10,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
+import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import com.example.wallto.R
@@ -21,7 +22,7 @@ import com.example.wallto.ui.main.WalletsFragment
 class MainActivity : AppCompatActivity() {
     private lateinit var btv: BottomNavigationView
     private lateinit var prefs: SharedPreferences
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
+    lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

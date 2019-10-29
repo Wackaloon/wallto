@@ -50,7 +50,7 @@ class PricesPresenter (val view: PricesView) : BasePresenter {
     private fun writeData(list: ArrayList<Currency>): ArrayList<Currency> {
         val prices = ArrayList<Currency>()
         if (view.isFragmentExist) {
-            for (i in 0..2) {
+            for (i in 0..7) {
                 prices.add(list[i])
             }
         }

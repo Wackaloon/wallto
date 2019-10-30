@@ -67,6 +67,9 @@ class ConcreteWalletFragment : Fragment() {
         progressAddress = v.findViewById(R.id.progressAddress)
 
         // Получение аргументов из списка счетов
+        // а если этого аргумента нет? нужна обработка крайних случаев
+        // во первых это поможет потом не сломать что-то
+        // а если и сломается, то сразу станет видно т.к. просто будет крашится при старте экрана
         val titleString = arguments!!.getString("title")
         id = arguments!!.getInt("id")
         val balanceString = arguments!!.getString("balance")
@@ -110,6 +113,7 @@ class ConcreteWalletFragment : Fragment() {
         if (isInputsValid) {
             sendSatoshi()
         } else {
+            // хорошая практика испльзовать ресурсы для любого отображения в UI
             Toast.makeText(context, "Некорректные данные", Toast.LENGTH_SHORT).show()
         }
     }
@@ -137,6 +141,9 @@ class ConcreteWalletFragment : Fragment() {
     }
 
     private fun sendSatoshi() {
+        // лезть в сеть из view очень плохая идея, даже если на экране 1 надпись и одна кнопка - лучше сделать презентер и контракт MVP хотя бы
+        // я слишком часто переписывал такие фрагменты с нуля, когда требования менялись и функционал экрана очень быстро разрастался
+        // естественно этого никто не ожидал
         walletService.send(id!!, sendAddress.text.toString(), sendSum.text.toString(), prefs.getString(PrefsRepository.Keys.TOKEN.toString(), ""), "gnomes")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

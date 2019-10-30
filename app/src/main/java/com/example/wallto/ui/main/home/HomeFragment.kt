@@ -72,6 +72,7 @@ class HomeFragment : Fragment(), HomeView {
     }
 
     override fun showLogin(name: String) {
+        // а зачем name передается как параметр?
         hello.text = "Доброго времени суток, username"
     }
 
@@ -87,6 +88,9 @@ class HomeFragment : Fragment(), HomeView {
     }
 
     override fun showIncrementAnimation(baseHeight: Int) {
+        // magic numbers самая злобная вещь, потом пойди вспомни что это за 80 и можно ли его менять
+        // хорошая практика выносить такие вещи в константы и писать очень понятное название и еще
+        // достаточно длинное пояснение что это и зачем оно нужно
         ValueAnimator.ofInt(baseHeight, 80, 65, 80).apply {
             addUpdateListener { arcView.arcHeight = it.animatedValue as Int }
             duration = 500

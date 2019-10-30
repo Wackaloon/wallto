@@ -107,6 +107,7 @@ class PinCodePresenter(val view: PinCodeView) : BasePresenter {
     }
 
     private fun updateTokenData(userToken: String?) {
+        // метод называется updateTokenData а обновляется PIN, нестыковка и потенциальный баг
         PrefsRepository.putValue(PrefsRepository.Keys.PIN.toString(), userToken!!)
         onSuccessfulAuth()
     }

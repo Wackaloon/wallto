@@ -3,7 +3,6 @@ package com.example.wallto.network;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 public class RestApi {
     private static final String BASE_URL = "https://api.wallto.ru/";
     private static Retrofit ourInstance;

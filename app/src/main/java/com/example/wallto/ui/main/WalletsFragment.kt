@@ -73,6 +73,7 @@ class WalletsFragment : Fragment() {
 
     @SuppressLint("CheckResult")
     private fun addItems() {
+        // лезть в сеть прямо из фрагмента прям такое себе
         walletService.getWallets(prefs.getString(PrefsRepository.Keys.TOKEN.toString(), ""), "gnomes")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

@@ -16,6 +16,7 @@ class WalletsAdapter(
     private var wallets: ArrayList<Wallet>,
     private var context: Context,
     private var fragmentManager: FragmentManager?
+// можно использовать ListAdapter и заодно прикрутить DiffUtil, это облегчит обновление списка
 ) : RecyclerView.Adapter<WalletHolder>() {
 
     @SuppressLint("PrivateResource")

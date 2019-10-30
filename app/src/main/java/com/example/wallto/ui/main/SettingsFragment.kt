@@ -23,6 +23,7 @@ import com.example.wallto.utils.PrefsRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SettingsFragment : Fragment() {
 
@@ -48,6 +49,7 @@ class SettingsFragment : Fragment() {
         version = v.findViewById(R.id.tvVersion)
         showVersion()
 
+        // почему не использовать синтетик лэйаут?
         username = v.findViewById(R.id.tvUsername)
         email = v.findViewById(R.id.tvEmail)
         showPersonalData()
@@ -127,7 +129,8 @@ class SettingsFragment : Fragment() {
     }
 
     private fun showPersonalData() {
-        email.text = prefs.getString(PrefsRepository.Keys.LOGIN.toString(), "")
+        // например вот так можно использовать синтетик
+        tvEmail.text = prefs.getString(PrefsRepository.Keys.LOGIN.toString(), "")
     }
 
     private fun showVersion() {

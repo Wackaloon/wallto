@@ -10,6 +10,8 @@ import com.example.wallto.base.BaseView
 
 interface RegisterView : BaseView {
     fun showError(string: String?)
+    // не стоит в нейминге интерфейса указывать детали реализации, а если надо будет показать
+    // не тост, а диалог? нужно будет переименовать метод, что не есть хорошо
     fun showToast(string: String?)
     fun openNextActivity()
 }

@@ -21,6 +21,7 @@ import com.example.wallto.ui.main.WalletsFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btv: BottomNavigationView
+    // зачем здесь SharedPreferences если у тебя есть класс [PrefsRepository]?
     private lateinit var prefs: SharedPreferences
     lateinit var toolbar: Toolbar
 
